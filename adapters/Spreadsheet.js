@@ -1,14 +1,14 @@
 const XLSX = require('xlsx');
 
-const getWorkSheet = (spreadsheet) =>
+const getWorksheet = (spreadsheet) =>
 {
     const error = new Error();
 
-    while(spreadsheet.worksheetIndex < spreadsheet.options.workSheets.length-1)
+    while(spreadsheet.worksheetIndex < spreadsheet.options.worksheets.length-1)
     {
         spreadsheet.worksheetIndex++;
         spreadsheet.rowIndex = 0;
-        const worksheet = spreadsheet.options.workSheets[spreadsheet.worksheetIndex];
+        const worksheet = spreadsheet.options.worksheets[spreadsheet.worksheetIndex];
         
         if(typeof worksheet.id === 'number' && spreadsheet.workbook.SheetNames[worksheet.id])
         {
@@ -27,7 +27,7 @@ const getWorkSheet = (spreadsheet) =>
         }
     }
 
-    error.message = `Failed to open worksheet ${spreadsheet.options.workSheets[spreadsheet.worksheetIndex]}.`;
+    error.message = `Failed to open worksheet ${spreadsheet.options.worksheets[spreadsheet.worksheetIndex]}.`;
     throw error;
 }
 
@@ -40,7 +40,7 @@ class Spreadsheet
         this.options.writingOptions = options.writingOptions || {};
         this.workbook = XLSX.read(options.data, Object.assign({}, options.parsingOptions));
         this.worksheetIndex = -1;
-        this.worksheet = getWorkSheet(this);
+        this.worksheet = getWorksheet(this);
         this.worksheetData = XLSX.utils.sheet_to_json(this.workbook.Sheets[this.worksheet]);
     }
 
@@ -52,7 +52,7 @@ class Spreadsheet
         {
             const keys = Object.keys(rowData);
             const row = {};
-            this.options.workSheets[this.worksheetIndex].columns.forEach((column) =>
+            this.options.worksheets[this.worksheetIndex].columns.forEach((column) =>
             {
                 if(typeof column.id === 'number')
                 {
@@ -91,7 +91,7 @@ class Spreadsheet
         {
             try
             {
-                this.worksheet = getWorkSheet(this);
+                this.worksheet = getWorksheet(this);
                 this.worksheetData = XLSX.utils.sheet_to_json(this.workbook.Sheets[this.worksheet]);
             }
 
