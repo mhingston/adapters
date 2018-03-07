@@ -115,7 +115,7 @@ class Spreadsheet
         return {data, meta: Array.isArray(meta) ? meta : [meta]};
     }
 
-    async update({data, meta, options})
+    async update({data, meta = [], options})
     {
         let index = 0;
         const keys = Object.keys(data[0]);
