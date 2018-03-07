@@ -14,7 +14,7 @@ A collection of adapters exposing the same API for reading and updating a data s
   * `data` {any} See [`XLSX.read`](https://github.com/SheetJS/js-xlsx#parsing-functions).
   * `parsingOptions` {Object} See [Parsing Options](https://github.com/SheetJS/js-xlsx#parsing-options).
   * `writingOptions` {Object} See [Writing Options](https://github.com/SheetJS/js-xlsx#writing-options).
-  * `workSheets` {Object[]} An array of worksheet objects to process.
+  * `worksheets` {Object[]} An array of worksheet objects to process.
     * `id` {Number|String} Worksheet ID, can be a string or number (zero indexed).
     * `columns` {Object[]} An array of column object to process
       * `id` {Number|String} Column ID, can be a string or number (zero indexed).
@@ -51,7 +51,7 @@ const main = async () =>
         {
             type: 'file'
         },
-        workSheets:
+        worksheets:
         [
             {
                 id: 'Sheet1', // worksheet ID, can be a string or number (zero indexed)
