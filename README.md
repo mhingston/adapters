@@ -85,3 +85,6 @@ const main = async () =>
 }
 
 main();
+```
+
+See also: [dvla-scraper](https://github.com/mhingston/dvla-scraper) which uses this library.
