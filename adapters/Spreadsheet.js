@@ -112,7 +112,7 @@ class Spreadsheet
             }
         }
 
-        return {data, meta};
+        return {data, meta: Array.isArray(meta) ? meta : [meta]};
     }
 
     async update({data, meta, options})
