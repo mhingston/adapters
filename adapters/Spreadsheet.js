@@ -47,7 +47,7 @@ class Spreadsheet
     async read(options = {})
     {
         let meta = {};
-        let data = this.worksheetData.slice(this.rowIndex, options.batchSize)
+        let data = this.worksheetData.slice(this.rowIndex, this.rowIndex+options.batchSize)
         .map((rowData, index) =>
         {
             const keys = Object.keys(rowData);
