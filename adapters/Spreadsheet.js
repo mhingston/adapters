@@ -123,7 +123,7 @@ class Spreadsheet
         {
             const worksheet = XLSX.utils.sheet_to_json(this.workbook.Sheets[meta.id]);
 
-            for(let row=meta.start; row <= meta.end; row++)
+            for(let row=meta.start; row < meta.end; row++)
             {
                 for(const key of keys)
                 {
