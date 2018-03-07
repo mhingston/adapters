@@ -1,0 +1,16 @@
+{
+  "name": "adapters",
+  "version": "1.0.0",
+  "description": "A collection of adapters exposing the same API for reading and updating a data source.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mark Hingston <git@mail.bitshift.cc>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.1.1",
+    "xlsx": "^0.12.4"
+  }
+}
