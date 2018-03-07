@@ -77,7 +77,7 @@ class Spreadsheet
             return row;
         });
         meta.start = this.rowIndex;
-        this.rowIndex += data.length-1;
+        this.rowIndex += data.length;
         meta.end = this.rowIndex;
         meta.id = this.worksheet;
         const remaining = options.batchSize - data.length;
